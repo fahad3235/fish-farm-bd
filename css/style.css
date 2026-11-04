@@ -1,0 +1,41 @@
+* { box-sizing: border-box; }
+body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: #eef6f1; color: #16302a; }
+header { background: #14532d; color: #fff; padding: 16px; }
+header h1 { margin: 0 0 4px; font-size: 24px; }
+header p { margin: 0; opacity: .9; font-size: 14px; }
+.toprow { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+#langBtn { background: #fff; color: #14532d; border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 700; cursor: pointer; white-space: nowrap; }
+nav { display: flex; gap: 8px; padding: 12px 16px 0; }
+nav button { flex: 1; border: 0; border-radius: 10px 10px 0 0; padding: 10px 4px; font-size: 15px; font-weight: 700; background: #d7e8dd; color: #14532d; cursor: pointer; }
+nav button.active { background: #fff; }
+main { max-width: 720px; margin: 0 auto; padding: 16px; }
+.tab { display: none; }
+.tab.active { display: block; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.stat { background: #fff; border-radius: 12px; padding: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.stat .label { font-size: 13px; color: #4b6b5e; }
+.stat .value { font-size: 22px; font-weight: 800; margin-top: 4px; }
+.stat.profit .value { color: #14532d; }
+.card { background: #fff; border-radius: 12px; padding: 14px; margin: 12px 0; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+.card h2, .card h3 { margin: 0 0 10px; }
+.badge { display: inline-block; background: #dcfce7; color: #14532d; border-radius: 20px; padding: 2px 10px; font-size: 12px; font-weight: 700; }
+.badge.closed { background: #fee2e2; color: #991b1b; }
+form label { display: block; font-size: 13px; font-weight: 600; margin: 8px 0 2px; }
+form input, form select, textarea { width: 100%; padding: 9px; border: 1px solid #b9cdc2; border-radius: 8px; font-size: 15px; }
+button.primary { background: #14532d; color: #fff; border: 0; border-radius: 8px; padding: 10px 16px; font-size: 15px; font-weight: 700; cursor: pointer; margin-top: 10px; }
+button.secondary { background: #e5efe9; color: #14532d; border: 0; border-radius: 8px; padding: 8px 12px; font-size: 14px; font-weight: 600; cursor: pointer; margin: 6px 6px 0 0; }
+button.danger { background: #fee2e2; color: #991b1b; }
+.err { color: #b91c1c; font-size: 13px; min-height: 16px; }
+.msg { font-size: 14px; font-weight: 600; margin-top: 8px; }
+.msg.ok { color: #14532d; }
+.msg.bad { color: #b91c1c; }
+.empty { color: #4b6b5e; font-style: italic; font-size: 14px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 6px 4px; border-bottom: 1px solid #e5efe9; }
+.rowline { display: flex; justify-content: space-between; gap: 8px; padding: 6px 0; border-bottom: 1px solid #eef2f0; font-size: 14px; }
+footer { max-width: 720px; margin: 0 auto; padding: 8px 16px 24px; font-size: 13px; color: #4b6b5e; }
+@media (max-width: 420px) {
+  header h1 { font-size: 21px; }
+  .stat .value { font-size: 19px; }
+  main { padding: 12px; }
+}

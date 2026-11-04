@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fish Farm BD - Offline Pond Tracker</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header>
+  <div class="toprow">
+    <div>
+      <h1 id="appTitle">Fish Farm BD</h1>
+      <p id="tagline"></p>
+    </div>
+    <button id="langBtn" type="button">Bangla</button>
+  </div>
+</header>
+<nav>
+  <button type="button" data-tab="dashboard" class="active" id="tabBtnDashboard">Dashboard</button>
+  <button type="button" data-tab="batches" id="tabBtnBatches">Pond Batches</button>
+  <button type="button" data-tab="data" id="tabBtnData">Data</button>
+</nav>
+<main>
+  <section id="tab-dashboard" class="tab active">
+    <div class="stats">
+      <div class="stat"><div class="label" id="lblActivePonds"></div><div class="value" id="stActivePonds">0</div></div>
+      <div class="stat"><div class="label" id="lblAlive"></div><div class="value" id="stAlive">0</div></div>
+      <div class="stat"><div class="label" id="lblSurvival"></div><div class="value" id="stSurvival">0%</div></div>
+      <div class="stat"><div class="label" id="lblFeedKg"></div><div class="value" id="stFeedKg">0</div></div>
+      <div class="stat"><div class="label" id="lblFeedCost"></div><div class="value" id="stFeedCost">0.00</div></div>
+      <div class="stat"><div class="label" id="lblRevenue"></div><div class="value" id="stRevenue">0.00</div></div>
+      <div class="stat profit"><div class="label" id="lblProfit"></div><div class="value" id="stProfit">0.00</div></div>
+    </div>
+    <div class="card">
+      <h2 id="lblPerBatch"></h2>
+      <div id="perBatch"></div>
+    </div>
+    <p class="empty" id="lblAllDataNote"></p>
+  </section>
+
+  <section id="tab-batches" class="tab">
+    <div class="card">
+      <h2 id="lblAddBatch"></h2>
+      <form id="batchForm" novalidate>
+        <label id="lblPondName" for="fName"></label>
+        <input id="fName" type="text" maxlength="60">
+        <div class="err" id="eName"></div>
+        <label id="lblSpecies" for="fSpecies"></label>
+        <select id="fSpecies">
+          <option value="Rui">Rui</option><option value="Katla">Katla</option>
+          <option value="Mrigel">Mrigel</option><option value="Tilapia">Tilapia</option>
+          <option value="Pangas">Pangas</option><option value="Koi">Koi</option>
+          <option value="Shing">Shing</option><option value="Magur">Magur</option>
+        </select>
+        <div class="err" id="eSpecies"></div>
+        <label id="lblSize" for="fSize"></label>
+        <input id="fSize" type="number" min="0" step="0.01" inputmode="decimal">
+        <div class="err" id="eSize"></div>
+        <label id="lblStocked" for="fStocked"></label>
+        <input id="fStocked" type="number" min="1" step="1" inputmode="numeric">
+        <div class="err" id="eStocked"></div>
+        <label id="lblFingerlingCost" for="fCost"></label>
+        <input id="fCost" type="number" min="0" step="0.01" inputmode="decimal">
+        <div class="err" id="eCost"></div>
+        <label id="lblStockingDate" for="fDate"></label>
+        <input id="fDate" type="date">
+        <div class="err" id="eDate"></div>
+        <button class="primary" type="submit" id="btnSaveBatch"></button>
+      </form>
+    </div>
+    <div id="batchList"></div>
+  </section>
+
+  <section id="tab-data" class="tab">
+    <div class="card">
+      <h2 id="lblExport"></h2>
+      <button class="primary" type="button" id="btnExport"></button>
+      <div class="msg" id="exportMsg"></div>
+    </div>
+    <div class="card">
+      <h2 id="lblImport"></h2>
+      <textarea id="importText" rows="6" placeholder=""></textarea>
+      <button class="primary" type="button" id="btnImport"></button>
+      <div class="msg" id="importMsg"></div>
+    </div>
+    <div class="card">
+      <h2 id="lblErase"></h2>
+      <p class="empty" id="lblEraseHint"></p>
+      <input id="eraseText" type="text" placeholder="DELETE" autocomplete="off">
+      <button class="primary danger" type="button" id="btnErase"></button>
+      <div class="msg" id="eraseMsg"></div>
+    </div>
+  </section>
+</main>
+<footer><p id="lblFooter"></p></footer>
+<script src="js/logic.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
